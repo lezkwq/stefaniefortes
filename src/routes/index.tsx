@@ -13,7 +13,10 @@ export const Route = createFileRoute("/")({
         content: "Limpeza de pele, dermaplaning e design de sobrancelhas em Blumenau, com atendimento atencioso e personalizado.",
       },
       { property: "og:title", content: "Estética Stefanie Probst Fortes" },
-      { property: "og:description", content: "Sua pele não precisa de mais. Precisa do cuidado certo. Estética facial e sobrancelhas em Blumenau." },
+      { property: "og:description", content: "Estética facial e sobrancelhas em Blumenau. Cuidado personalizado e atenção aos detalhes." },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Stefanie Probst Fortes, estética facial e sobrancelhas em Blumenau" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -128,37 +131,37 @@ function Header() {
 
 function Hero() {
   return (
+    <>
     <section id="inicio" className="relative isolate min-h-[100svh] overflow-hidden bg-card md:min-h-[min(100svh,56.25vw)] md:h-auto">
       <picture>
-        <source media="(min-width: 768px)" srcSet="/images/hero-desktop.png" />
+        <source media="(min-width: 768px)" srcSet="/images/hero-desktop.jpg" />
         <img
-          src="/images/hero-mobile.png"
+          src="/images/hero-mobile.jpg"
           alt="Stefanie Probst Fortes em sua sala de atendimento"
           fetchPriority="high"
           className="absolute inset-0 -z-20 size-full object-cover object-[70%_30%] md:object-[70%_center]"
         />
       </picture>
-      <div aria-hidden className="absolute inset-0 -z-10 bg-hero-wash-mobile md:bg-hero-wash" />
 
-      <div className="container-ed flex min-h-[100svh] flex-col justify-end pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-28 md:min-h-[min(100svh,56.25vw)] md:justify-center md:pb-16">
-        <div className="fade-in max-w-[34rem] text-cream md:max-w-[34rem] md:text-primary">
-          <p className="eyebrow mb-5 text-cream/85 md:text-muted-foreground">Estética facial e sobrancelhas em Blumenau</p>
+      <div className="container-ed flex min-h-[100svh] flex-col justify-end pb-[max(1.75rem,env(safe-area-inset-bottom))] pt-28 md:min-h-[min(100svh,56.25vw)] md:justify-center md:pb-16">
+        <div className="fade-in max-w-[34rem] text-cream [&_h1]:max-w-[15ch] md:[&_h1]:max-w-none md:max-w-[30rem] md:text-primary lg:max-w-[33rem]">
+          <p className="eyebrow mb-5 hidden md:block md:text-muted-foreground">Estética facial e sobrancelhas em Blumenau</p>
           <h1 className="t-hero">
             <span className="hidden sm:inline">
               Sua pele não precisa de mais. <em className="italic">Precisa do cuidado certo.</em>
             </span>
-            <span className="sm:hidden">O cuidado certo para a sua pele.</span>
+            <span className="sm:hidden">Sua pele merece o cuidado certo.</span>
           </h1>
-          <p className="t-lead mt-6 max-w-[26rem] text-cream/90 md:text-foreground/80">
+          <p className="t-lead mt-6 hidden max-w-[26rem] md:block md:text-foreground/80">
             Cuidado facial e sobrancelhas com atenção aos detalhes e um atendimento pensado para você.
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8 md:mt-9">
             <a href={whatsappUrl(MESSAGES.hero)} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
               <FaWhatsapp aria-hidden className="size-5" /> Agendar pelo WhatsApp
             </a>
             <a
               href="#procedimentos"
-              className="inline-flex items-center gap-2 self-start border-b border-current/50 pb-1 text-[0.95rem] font-medium transition-colors hover:border-current"
+              className="hidden items-center gap-2 self-start border-b border-current/50 pb-1 text-[0.95rem] font-medium transition-colors hover:border-current md:inline-flex"
             >
               Conhecer procedimentos
             </a>
@@ -166,12 +169,20 @@ function Hero() {
         </div>
       </div>
     </section>
+    <div className="container-ed pt-10 md:hidden">
+      <p className="eyebrow mb-4 text-muted-foreground">Estética facial e sobrancelhas em Blumenau</p>
+      <p className="t-lead text-foreground/80">
+        Cuidado facial e sobrancelhas com atenção aos detalhes e um atendimento pensado para você.
+      </p>
+      <a href="#procedimentos" className={`${linkEd} mt-6`}>Conhecer procedimentos</a>
+    </div>
+    </>
   );
 }
 
 function Intro() {
   return (
-    <section className="container-ed grid gap-10 py-24 md:grid-cols-12 md:py-40">
+    <section className="container-ed grid gap-10 pt-16 pb-24 md:grid-cols-12 md:py-40">
       <Reveal className="md:col-span-7 md:col-start-2">
         <h2 className="t-section text-primary">Um cuidado que começa na atenção aos detalhes.</h2>
       </Reveal>
@@ -193,7 +204,7 @@ function About() {
         <div className="md:col-span-5">
           <div className="photo-zoom aspect-[4/5]">
             <img
-              src="/images/03_procedimento_atendimento.jpg"
+              src="/images/procedimento-atendimento.jpg"
               alt="Stefanie realizando um atendimento facial"
               loading="lazy"
               className="size-full object-cover object-[center_40%]"
@@ -234,7 +245,7 @@ function Procedures() {
       {/* Limpeza de pele — bloco principal */}
       <Reveal className="mt-16 grid gap-8 md:mt-24 md:grid-cols-12 md:gap-10">
         <div className="photo-zoom aspect-square md:col-span-7">
-          <img src="/images/04_procedimento_limpeza_de_pele.jpg" alt="Cuidado facial com máscara" loading="lazy" className="size-full object-cover" />
+          <img src="/images/procedimento-limpeza-pele.jpg" alt="Cuidado facial com máscara" loading="lazy" className="size-full object-cover" />
         </div>
         <div className="flex flex-col justify-end md:col-span-4 md:col-start-9 md:pb-6">
           <h3 className="text-[clamp(2rem,3.2vw,3rem)] leading-tight text-primary">Limpeza de pele</h3>
@@ -265,7 +276,7 @@ function Procedures() {
         <Reveal className="md:col-span-6 md:col-start-7" delay={120}>
           <div className="photo-zoom aspect-[4/5]">
             <img
-              src="/images/08_resultado_cliente_sobrancelhas.jpg"
+              src="/images/resultado-sobrancelhas.jpg"
               alt="Cliente com destaque para o rosto e as sobrancelhas"
               loading="lazy"
               className="size-full object-cover object-[center_30%]"
@@ -291,7 +302,7 @@ function Space() {
         <Reveal className="md:col-span-7">
           <div className="aspect-[1100/1430] overflow-hidden">
             <img
-              src="/images/01_ambiente_sala_atendimento.jpg"
+              src="/images/ambiente-atendimento.jpg"
               alt="Sala de atendimento com maca e paredes com molduras clássicas"
               loading="lazy"
               className="size-full object-cover"
@@ -308,7 +319,7 @@ function Space() {
           <Reveal delay={150}>
             <div className="ml-auto aspect-[960/1639] w-2/3 overflow-hidden md:w-full">
               <img
-                src="/images/02_ambiente_espaco_recepcao.jpg"
+                src="/images/ambiente-recepcao.jpg"
                 alt="Espaço com cadeira, móveis e detalhes decorativos"
                 loading="lazy"
                 className="size-full object-cover"
@@ -322,9 +333,9 @@ function Space() {
 }
 
 const GALLERY = [
-  { src: "/images/06_procedimento_facial_esferas.jpg", alt: "Atendimento facial com esferas", cls: "md:col-span-4 aspect-[640/1136]" },
-  { src: "/images/05_resultado_cliente_pele_sobrancelhas.jpg", alt: "Rosto de uma cliente em fotografia próxima", cls: "md:col-span-5 md:mt-32 aspect-square" },
-  { src: "/images/03_procedimento_atendimento.jpg", alt: "Stefanie durante um atendimento", cls: "md:col-span-3 md:mt-12 aspect-[942/1670]" },
+  { src: "/images/procedimento-esferas.jpg", alt: "Atendimento facial com esferas", cls: "md:col-span-4 aspect-[640/1136]" },
+  { src: "/images/resultado-pele.jpg", alt: "Rosto de uma cliente em fotografia próxima", cls: "md:col-span-5 md:mt-32 aspect-square" },
+  { src: "/images/procedimento-atendimento.jpg", alt: "Stefanie durante um atendimento", cls: "md:col-span-3 md:mt-12 aspect-[942/1670]" },
 ];
 
 function Gallery() {
@@ -389,7 +400,7 @@ function Review() {
         <Reveal className="md:col-span-4">
           <div className="mx-auto aspect-[3/4] w-3/4 overflow-hidden md:w-full">
             <img
-              src="/images/07_identidade_cartao_presente.jpg"
+              src="/images/cartao-presente.jpg"
               alt="Cartão com a identidade visual de Stefanie Probst Fortes"
               loading="lazy"
               className="size-full object-cover"

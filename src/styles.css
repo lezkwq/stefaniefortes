@@ -56,8 +56,6 @@
   --ring: oklch(0.64 0.045 35);
   --ink: oklch(0.22 0.02 40);
   --cream: oklch(0.985 0.005 70);
-  --hero-wash: linear-gradient(90deg, oklch(0.96 0.012 70 / 0.92) 0%, oklch(0.96 0.012 70 / 0.7) 32%, oklch(0.96 0.012 70 / 0) 55%);
-  --hero-wash-mobile: linear-gradient(180deg, oklch(0.2 0.02 40 / 0) 30%, oklch(0.2 0.02 40 / 0.6) 55%, oklch(0.2 0.02 40 / 0.82) 100%);
 }
 
 @layer base {
@@ -80,13 +78,11 @@
   padding-inline: clamp(1.25rem, 4vw, 3.5rem);
 }
 
-@utility t-hero { font-size: clamp(2.7rem, 5.6vw, 5.6rem); line-height: 0.98; }
+@utility t-hero { font-size: clamp(2.4rem, 5.2vw, 5.4rem); line-height: 0.98; }
 @utility t-section { font-size: clamp(2.2rem, 4.6vw, 4.25rem); line-height: 1.04; }
 @utility t-lead { font-size: clamp(1.0625rem, 1.4vw, 1.3rem); line-height: 1.65; }
 @utility eyebrow { font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; }
 
-@utility bg-hero-wash { background: var(--hero-wash); }
-@utility bg-hero-wash-mobile { background: var(--hero-wash-mobile); }
 
 @utility photo-zoom {
   overflow: hidden;
