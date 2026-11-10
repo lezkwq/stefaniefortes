@@ -80,15 +80,15 @@ function Header() {
       className={`fixed inset-x-0 top-0 z-40 transition-colors duration-500 ${solid ? "border-b border-border bg-background/95 backdrop-blur" : "bg-transparent"}`}
     >
       <div className="container-ed flex h-16 items-center justify-between md:h-20">
-        <a href="#inicio" className="leading-tight text-primary" onClick={() => setOpen(false)}>
+        <a href="#inicio" className="leading-tight text-foreground" onClick={() => setOpen(false)}>
           <span className="block font-display text-[1.35rem] md:text-[1.5rem]">Stefanie Probst Fortes</span>
-          <span className="hidden text-[0.68rem] uppercase tracking-[0.2em] text-muted-foreground sm:block">
+          <span className="hidden text-[0.68rem] uppercase tracking-[0.2em] text-foreground sm:block">
             Estética facial e sobrancelhas
           </span>
         </a>
         <nav className="hidden items-center gap-9 md:flex" aria-label="Principal">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href} className="text-[0.92rem] text-foreground/85 transition-colors hover:text-primary">
+            <a key={n.href} href={n.href} className="text-[0.92rem] text-foreground transition-colors hover:text-primary">
               {n.label}
             </a>
           ))}
@@ -143,25 +143,25 @@ function Hero() {
         />
       </picture>
 
-      <div className="container-ed flex min-h-[100svh] flex-col justify-end pb-[max(1.75rem,env(safe-area-inset-bottom))] pt-28 md:min-h-[min(100svh,56.25vw)] md:justify-center md:pb-16">
-        <div className="fade-in max-w-[34rem] text-cream [&_h1]:max-w-[15ch] md:[&_h1]:max-w-none md:max-w-[30rem] md:text-primary lg:max-w-[33rem]">
-          <p className="eyebrow mb-5 hidden md:block md:text-muted-foreground">Estética facial e sobrancelhas em Blumenau</p>
+      <div className="container-ed flex min-h-[100svh] flex-col justify-end pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-28 md:min-h-[min(100svh,56.25vw)] md:justify-center md:pb-16">
+        <div className="fade-in max-w-[34rem] text-cream md:max-w-[30rem] md:text-primary lg:max-w-[33rem]">
+          <p className="eyebrow mb-5 text-cream/85 md:text-foreground">Estética facial e sobrancelhas em Blumenau</p>
           <h1 className="t-hero">
             <span className="hidden sm:inline">
               Sua pele não precisa de mais. <em className="italic">Precisa do cuidado certo.</em>
             </span>
             <span className="sm:hidden">Sua pele merece o cuidado certo.</span>
           </h1>
-          <p className="t-lead mt-6 hidden max-w-[26rem] md:block md:text-foreground/80">
+          <p className="t-lead mt-6 max-w-[26rem] text-cream/90 md:text-foreground">
             Cuidado facial e sobrancelhas com atenção aos detalhes e um atendimento pensado para você.
           </p>
-          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8 md:mt-9">
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
             <a href={whatsappUrl(MESSAGES.hero)} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
               <FaWhatsapp aria-hidden className="size-5" /> Agendar pelo WhatsApp
             </a>
             <a
               href="#procedimentos"
-              className="hidden items-center gap-2 self-start border-b border-current/50 pb-1 text-[0.95rem] font-medium transition-colors hover:border-current md:inline-flex"
+              className="inline-flex items-center gap-2 self-start border-b border-current/50 pb-1 text-[0.95rem] font-medium transition-colors hover:border-current"
             >
               Conhecer procedimentos
             </a>
@@ -169,20 +169,13 @@ function Hero() {
         </div>
       </div>
     </section>
-    <div className="container-ed pt-10 md:hidden">
-      <p className="eyebrow mb-4 text-muted-foreground">Estética facial e sobrancelhas em Blumenau</p>
-      <p className="t-lead text-foreground/80">
-        Cuidado facial e sobrancelhas com atenção aos detalhes e um atendimento pensado para você.
-      </p>
-      <a href="#procedimentos" className={`${linkEd} mt-6`}>Conhecer procedimentos</a>
-    </div>
     </>
   );
 }
 
 function Intro() {
   return (
-    <section className="container-ed grid gap-10 pt-16 pb-24 md:grid-cols-12 md:py-40">
+    <section className="container-ed grid gap-10 py-24 md:grid-cols-12 md:py-40">
       <Reveal className="md:col-span-7 md:col-start-2">
         <h2 className="t-section text-primary">Um cuidado que começa na atenção aos detalhes.</h2>
       </Reveal>
