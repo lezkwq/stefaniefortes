@@ -35,7 +35,7 @@ function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; 
     if (!el) return;
     const io = new IntersectionObserver(
       ([e]) => {
-        if (e.isIntersecting) {
+        if (e?.isIntersecting) {
           el.classList.add("is-visible");
           io.disconnect();
         }
@@ -358,11 +358,11 @@ function Gallery() {
           </button>
         ))}
       </div>
-      {active !== null && (
+      {item && (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={GALLERY[active].alt}
+          aria-label={item.alt}
           className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-4"
           onClick={() => setActive(null)}
         >
@@ -375,7 +375,7 @@ function Gallery() {
           >
             <X className="size-7" />
           </button>
-          <img src={GALLERY[active].src} alt={GALLERY[active].alt} className="max-h-[88vh] max-w-full object-contain" />
+          <img src={item.src} alt={item.alt} className="max-h-[88vh] max-w-full object-contain" />
         </div>
       )}
     </section>
