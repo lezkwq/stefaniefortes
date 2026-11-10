@@ -157,12 +157,12 @@ function Hero() {
             Cuidado facial e sobrancelhas com atenção aos detalhes e um atendimento pensado para você.
           </p>
           <div className="mt-4 md:mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
-            <a href={whatsappUrl(MESSAGES.hero)} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+            <a href={whatsappUrl(MESSAGES.hero)} target="_blank" rel="noopener noreferrer" className={`${btnPrimary} max-sm:self-start max-md:rounded-md`}>
               <FaWhatsapp aria-hidden className="size-5" /> Agendar pelo WhatsApp
             </a>
             <a
               href="#procedimentos"
-              className="inline-flex items-center gap-2 self-start border-b border-current/50 pb-1 text-[0.95rem] font-medium transition-colors hover:border-current"
+              className="inline-flex items-center gap-2 self-start border-b border-current/50 pb-1 text-[0.95rem] font-medium transition-colors hover:border-current max-md:text-white"
             >
               Conhecer procedimentos
             </a>
