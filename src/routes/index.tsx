@@ -143,19 +143,19 @@ function Hero() {
         />
       </picture>
 
-      <div className="container-ed flex min-h-[100svh] flex-col justify-end pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-28 md:min-h-[min(100svh,56.25vw)] md:justify-center md:pb-16">
+      <div className="container-ed flex min-h-[100svh] flex-col justify-end pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-28 md:min-h-[min(100svh,56.25vw)] md:justify-center md:pb-16">
         <div className="fade-in max-w-[34rem] text-cream md:max-w-[30rem] md:text-primary lg:max-w-[33rem]">
-          <p className="eyebrow mb-5 text-cream/85 md:text-foreground">Estética facial e sobrancelhas em Blumenau</p>
+          <p className="eyebrow mb-3 md:mb-5 text-cream/85 md:text-foreground">Estética facial e sobrancelhas em Blumenau</p>
           <h1 className="t-hero">
             <span className="hidden sm:inline">
               Sua pele não precisa de mais. <em className="italic">Precisa do cuidado certo.</em>
             </span>
             <span className="sm:hidden">Sua pele merece o cuidado certo.</span>
           </h1>
-          <p className="t-lead mt-6 max-w-[26rem] text-cream/90 md:text-foreground">
+          <p className="t-lead mt-4 md:mt-6 max-w-[26rem] text-cream/90 md:text-foreground">
             Cuidado facial e sobrancelhas com atenção aos detalhes e um atendimento pensado para você.
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+          <div className="mt-6 md:mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
             <a href={whatsappUrl(MESSAGES.hero)} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
               <FaWhatsapp aria-hidden className="size-5" /> Agendar pelo WhatsApp
             </a>
