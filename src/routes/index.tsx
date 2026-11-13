@@ -84,7 +84,7 @@ function Header() {
           <span className="block font-display text-[1.35rem] md:text-[1.5rem]">Stefanie Probst Fortes</span>
           <span className="mt-1 block text-[0.6rem] leading-tight tracking-wide md:hidden">Estética facial e sobrancelhas em Blumenau</span>
           <span className="hidden text-[0.68rem] uppercase tracking-[0.2em] text-foreground md:block">
-            Estética facial e sobrancelhas
+            Estética facial e sobrancelhas em Blumenau
           </span>
         </a>
         <nav className="hidden items-center gap-9 md:flex" aria-label="Principal">
@@ -146,7 +146,6 @@ function Hero() {
 
       <div className="container-ed flex min-h-[100svh] flex-col pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-[clamp(6rem,24svh,12rem)] md:min-h-[min(100svh,56.25vw)] md:justify-center md:pb-16 md:pt-28">
         <div className="fade-in max-w-[34rem] text-primary md:max-w-[30rem] lg:max-w-[33rem]">
-          <p className="eyebrow mb-5 hidden text-foreground md:block">Estética facial e sobrancelhas em Blumenau</p>
           <h1 className="t-hero">
             <span className="hidden sm:inline">
               Sua pele não precisa de mais. <em className="italic">Precisa do cuidado certo.</em>
